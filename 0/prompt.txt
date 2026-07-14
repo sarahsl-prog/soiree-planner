@@ -1,20 +1,11 @@
-- First create and check out a new informatively named branch for this work.
-- Use the configured branch name prefix "cursor/" (for example, "cursor/short-description").
-Stage the changes you worked on and create a commit for this branch.
-- Current branch: main.
+Stage the changes you worked on, commit, and push for this branch.
+- Current branch: cursor/soiree-planner-web-app.
 - Base branch: main.
 - Stage the changes you worked on.
 - If there are unrelated files or changes, exclude them.
 - Write a concise commit message.
-- Do not push.
+- Push after creating the commit.
 - Do not include unrelated files in the commit.
-<timestamp>Monday, Jul 13, 2026, 9:01 PM (UTC-4)</timestamp>
+<timestamp>Monday, Jul 13, 2026, 9:07 PM (UTC-4)</timestamp>
 
-Execute the selected diff-tab create-branch-and-commit action.
-
----
-
-Add an RSVP form to the Soirée Planner.
-
-Guests enter their name, choose attending or regrets, and can add a
-plus-one. Submitted RSVPs appear in the guest list immediately.
+Execute the selected diff-tab commit-and-push action.
