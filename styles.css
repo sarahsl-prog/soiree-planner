@@ -1,0 +1,282 @@
+/* ── Base & dusk sky background ─────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Warm summer-evening palette */
+  --sky-deep: #1a1033;
+  --sky-mid: #3d1f4a;
+  --sunset-glow: #c45c26;
+  --golden: #e8a838;
+  --amber-light: #f5c76a;
+  --cream: #fdf6e8;
+  --card-bg: rgba(30, 18, 42, 0.75);
+  --card-border: rgba(232, 168, 56, 0.25);
+  --text-muted: rgba(253, 246, 232, 0.65);
+  --rsvp-yes: #7ec87a;
+  --rsvp-maybe: #e8a838;
+  --rsvp-no: #d46a6a;
+}
+
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  color: var(--cream);
+  min-height: 100vh;
+  /* Layered gradient mimics a warm dusk sky */
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(196, 92, 38, 0.45) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 20%, rgba(232, 168, 56, 0.15) 0%, transparent 40%),
+    linear-gradient(180deg, var(--sky-deep) 0%, var(--sky-mid) 45%, #5c2d3a 100%);
+  line-height: 1.6;
+}
+
+/* ── String lights decoration ───────────────────────────────────────────── */
+
+.string-lights {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  z-index: 10;
+  pointer-events: none;
+  /* SVG wire with glowing bulbs */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='48' viewBox='0 0 120 48'%3E%3Cpath d='M0 8 Q30 28 60 8 Q90 -12 120 8' fill='none' stroke='%234a3058' stroke-width='2'/%3E%3Ccircle cx='15' cy='16' r='5' fill='%23f5c76a' opacity='0.9'/%3E%3Ccircle cx='45' cy='6' r='5' fill='%23e8a838' opacity='0.85'/%3E%3Ccircle cx='75' cy='16' r='5' fill='%23f5c76a' opacity='0.9'/%3E%3Ccircle cx='105' cy='6' r='5' fill='%23e8a838' opacity='0.85'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 120px 48px;
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.75; filter: brightness(0.9); }
+  to   { opacity: 1;   filter: brightness(1.15); }
+}
+
+/* ── Layout ─────────────────────────────────────────────────────────────── */
+
+.hero {
+  text-align: center;
+  padding: 5rem 1.5rem 2.5rem;
+}
+
+.hero-eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber-light);
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 20px rgba(232, 168, 56, 0.35);
+}
+
+.hero-subtitle {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.25rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* ── Cards ──────────────────────────────────────────────────────────────── */
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.75rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--amber-light);
+  margin-bottom: 0.35rem;
+}
+
+.section-note {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Countdown ──────────────────────────────────────────────────────────── */
+
+.countdown-card {
+  text-align: center;
+}
+
+.countdown-label {
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 72px;
+}
+
+.countdown-value {
+  font-size: 2.5rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--golden);
+  text-shadow: 0 0 18px rgba(232, 168, 56, 0.5);
+  line-height: 1.1;
+}
+
+.countdown-name {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.countdown-message {
+  margin-top: 1.25rem;
+  font-style: italic;
+  color: var(--amber-light);
+}
+
+/* ── Guest table ────────────────────────────────────────────────────────── */
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.guest-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.guest-table th,
+.guest-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(232, 168, 56, 0.15);
+}
+
+.guest-table th {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.guest-table tbody tr:hover {
+  background: rgba(232, 168, 56, 0.06);
+}
+
+/* RSVP status badges */
+.rsvp-badge {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.rsvp-yes   { background: rgba(126, 200, 122, 0.2); color: var(--rsvp-yes); }
+.rsvp-maybe { background: rgba(232, 168, 56, 0.2);  color: var(--rsvp-maybe); }
+.rsvp-no    { background: rgba(212, 106, 106, 0.2); color: var(--rsvp-no); }
+
+.plus-one {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.plus-one.has-guest {
+  color: var(--cream);
+  font-style: normal;
+}
+
+/* ── Drink menu ─────────────────────────────────────────────────────────── */
+
+.drink-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.drink-night {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(232, 168, 56, 0.12);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.drink-night h3 {
+  font-size: 1.1rem;
+  color: var(--golden);
+  margin-bottom: 0.15rem;
+}
+
+.drink-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.drink-item {
+  margin-bottom: 0.85rem;
+}
+
+.drink-item:last-child {
+  margin-bottom: 0;
+}
+
+.drink-type {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.drink-name {
+  font-size: 1.05rem;
+  margin-top: 0.15rem;
+}
+
+.drink-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}

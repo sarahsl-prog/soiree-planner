@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soirée Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Decorative string lights across the top of the page -->
+  <div class="string-lights" aria-hidden="true"></div>
+
+  <header class="hero">
+    <p class="hero-eyebrow">Three nights under summer skies</p>
+    <h1>Soirée Planner</h1>
+    <p class="hero-subtitle">July 18 – 20, 2026 · Garden Terrace</p>
+  </header>
+
+  <main>
+    <!-- Golden hour countdown for opening night -->
+    <section class="card countdown-card" aria-labelledby="countdown-heading">
+      <h2 id="countdown-heading">Opening Night · Golden Hour</h2>
+      <p class="countdown-label">Countdown to first toast at sunset</p>
+      <div id="countdown" class="countdown" role="timer" aria-live="polite">
+        <div class="countdown-unit">
+          <span id="days" class="countdown-value">--</span>
+          <span class="countdown-name">Days</span>
+        </div>
+        <div class="countdown-unit">
+          <span id="hours" class="countdown-value">--</span>
+          <span class="countdown-name">Hours</span>
+        </div>
+        <div class="countdown-unit">
+          <span id="minutes" class="countdown-value">--</span>
+          <span class="countdown-name">Minutes</span>
+        </div>
+        <div class="countdown-unit">
+          <span id="seconds" class="countdown-value">--</span>
+          <span class="countdown-name">Seconds</span>
+        </div>
+      </div>
+      <p id="countdown-message" class="countdown-message"></p>
+    </section>
+
+    <!-- Guest list with RSVP and plus-one details -->
+    <section class="card" aria-labelledby="guests-heading">
+      <h2 id="guests-heading">Guest List</h2>
+      <p class="section-note">Track who's coming and who they're bringing.</p>
+      <div class="table-wrap">
+        <table class="guest-table">
+          <thead>
+            <tr>
+              <th scope="col">Guest</th>
+              <th scope="col">RSVP</th>
+              <th scope="col">Plus-One</th>
+            </tr>
+          </thead>
+          <tbody id="guest-list">
+            <!-- Rows are injected by app.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Signature drinks for each of the three nights -->
+    <section class="card" aria-labelledby="drinks-heading">
+      <h2 id="drinks-heading">Signature Drink Menu</h2>
+      <p class="section-note">One signature cocktail and mocktail per evening.</p>
+      <div id="drink-menu" class="drink-grid">
+        <!-- Drink cards are injected by app.js -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Warm evenings, good company, golden light.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
