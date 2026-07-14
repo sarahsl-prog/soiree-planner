@@ -1,0 +1,15 @@
+Build a simple Soirée Planner web app in this project.
+
+The app manages a three-night summer soirée. Add a guest list showing
+each guest's name, RSVP status, and plus-one. Add a signature drink
+menu with one drink per night. Include a mocktail option each night. Add a countdown to golden hour on opening night. Style it like a summer evening party: warm dusk colors,
+string-light energy. Keep the code simple and readable, include comments to explain what each part is doing.
+
+---
+
+Build a simple Soirée Planner web app in this project.
+
+The app manages a three-night summer soirée. Add a guest list showing
+each guest's name, RSVP status, and plus-one. Add a signature drink
+menu with one drink per night. Include a mocktail option each night. Add a countdown to golden hour on opening night. Style it like a summer evening party: warm dusk colors,
+string-light energy. Keep the code simple and readable, include comments to explain what each part is doing.
