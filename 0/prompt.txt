@@ -1,15 +1,13 @@
-Build a simple Soirée Planner web app in this project.
+- First create and check out a new informatively named branch for this work.
+- Use the configured branch name prefix "cursor/" (for example, "cursor/short-description").
+Stage the changes you worked on and create a commit for this branch.
+- Current branch: main.
+- Base branch: main.
+- Stage the changes you worked on.
+- If there are unrelated files or changes, exclude them.
+- Write a concise commit message.
+- Do not push.
+- Do not include unrelated files in the commit.
+<timestamp>Monday, Jul 13, 2026, 9:01 PM (UTC-4)</timestamp>
 
-The app manages a three-night summer soirée. Add a guest list showing
-each guest's name, RSVP status, and plus-one. Add a signature drink
-menu with one drink per night. Include a mocktail option each night. Add a countdown to golden hour on opening night. Style it like a summer evening party: warm dusk colors,
-string-light energy. Keep the code simple and readable, include comments to explain what each part is doing.
-
----
-
-Build a simple Soirée Planner web app in this project.
-
-The app manages a three-night summer soirée. Add a guest list showing
-each guest's name, RSVP status, and plus-one. Add a signature drink
-menu with one drink per night. Include a mocktail option each night. Add a countdown to golden hour on opening night. Style it like a summer evening party: warm dusk colors,
-string-light energy. Keep the code simple and readable, include comments to explain what each part is doing.
+Execute the selected diff-tab create-branch-and-commit action.
