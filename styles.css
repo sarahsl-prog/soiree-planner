@@ -174,6 +174,109 @@ footer {
   color: var(--amber-light);
 }
 
+/* ── RSVP form ──────────────────────────────────────────────────────────── */
+
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-field label,
+.form-field legend {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.form-field legend {
+  margin-bottom: 0.5rem;
+}
+
+.optional {
+  text-transform: none;
+  letter-spacing: normal;
+  font-style: italic;
+}
+
+.rsvp-form input[type="text"] {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--cream);
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(232, 168, 56, 0.2);
+  border-radius: 6px;
+}
+
+.rsvp-form input[type="text"]::placeholder {
+  color: rgba(253, 246, 232, 0.3);
+}
+
+.rsvp-form input[type="text"]:focus {
+  outline: none;
+  border-color: var(--golden);
+  box-shadow: 0 0 0 2px rgba(232, 168, 56, 0.2);
+}
+
+.form-field fieldset {
+  border: none;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 1rem;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--cream);
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+  accent-color: var(--golden);
+}
+
+.submit-btn {
+  align-self: flex-start;
+  padding: 0.7rem 1.5rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sky-deep);
+  background: var(--golden);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.submit-btn:hover {
+  background: var(--amber-light);
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+.rsvp-feedback {
+  font-style: italic;
+  color: var(--amber-light);
+  min-height: 1.5em;
+}
+
 /* ── Guest table ────────────────────────────────────────────────────────── */
 
 .table-wrap {

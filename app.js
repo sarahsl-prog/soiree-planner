@@ -62,6 +62,13 @@ const DRINK_MENU = [
 
 // ── Guest list rendering ───────────────────────────────────────────────────
 
+/** Human-friendly labels for RSVP badge values. */
+const RSVP_LABELS = {
+  yes: "attending",
+  maybe: "maybe",
+  no: "regrets",
+};
+
 /**
  * Build a table row for one guest.
  * RSVP values map to colored badge classes defined in styles.css.
@@ -75,7 +82,7 @@ function createGuestRow(guest) {
   const rsvpCell = document.createElement("td");
   const badge = document.createElement("span");
   badge.className = `rsvp-badge rsvp-${guest.rsvp}`;
-  badge.textContent = guest.rsvp;
+  badge.textContent = RSVP_LABELS[guest.rsvp] || guest.rsvp;
   rsvpCell.appendChild(badge);
 
   const plusOneCell = document.createElement("td");
@@ -97,6 +104,65 @@ function createGuestRow(guest) {
 function renderGuestList() {
   const tbody = document.getElementById("guest-list");
   GUESTS.forEach((guest) => tbody.appendChild(createGuestRow(guest)));
+}
+
+/**
+ * Add one guest to the in-memory list and append their row to the table.
+ * Called when the RSVP form is submitted.
+ */
+function addGuest(guest) {
+  GUESTS.push(guest);
+  document.getElementById("guest-list").appendChild(createGuestRow(guest));
+}
+
+// ── RSVP form handling ─────────────────────────────────────────────────────
+
+/** Wire up the RSVP form: validate, add guest, reset, and show feedback. */
+function initRsvpForm() {
+  const form = document.getElementById("rsvp-form");
+  const plusOneField = document.getElementById("plus-one-field");
+  const plusOneInput = document.getElementById("plus-one");
+  const feedback = document.getElementById("rsvp-feedback");
+  const rsvpRadios = form.querySelectorAll('input[name="rsvp"]');
+
+  // Hide plus-one when guest sends regrets — no guest to bring
+  function syncPlusOneVisibility() {
+    const attending = form.querySelector('input[name="rsvp"]:checked').value === "yes";
+    plusOneField.hidden = !attending;
+    if (!attending) plusOneInput.value = "";
+  }
+
+  rsvpRadios.forEach((radio) => radio.addEventListener("change", syncPlusOneVisibility));
+  syncPlusOneVisibility();
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const name = form.name.value.trim();
+    const rsvp = form.rsvp.value;
+    const plusOneRaw = form.plusOne.value.trim();
+
+    if (!name) {
+      feedback.textContent = "Please enter your name.";
+      form.name.focus();
+      return;
+    }
+
+    const guest = {
+      name,
+      rsvp,
+      plusOne: rsvp === "yes" && plusOneRaw ? plusOneRaw : null,
+    };
+
+    addGuest(guest);
+    form.reset();
+    form.querySelector('input[name="rsvp"][value="yes"]').checked = true;
+    syncPlusOneVisibility();
+
+    feedback.textContent = rsvp === "yes"
+      ? `Welcome, ${name}! You're on the list.`
+      : `Thanks, ${name}. We'll miss you.`;
+  });
 }
 
 // ── Drink menu rendering ─────────────────────────────────────────────────────
@@ -195,5 +261,6 @@ function updateCountdown() {
 
 renderGuestList();
 renderDrinkMenu();
+initRsvpForm();
 updateCountdown();
 setInterval(updateCountdown, 1000);

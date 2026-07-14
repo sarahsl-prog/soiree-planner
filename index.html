@@ -42,6 +42,53 @@
       <p id="countdown-message" class="countdown-message"></p>
     </section>
 
+    <!-- RSVP form — new submissions appear in the guest list below -->
+    <section class="card" aria-labelledby="rsvp-heading">
+      <h2 id="rsvp-heading">RSVP</h2>
+      <p class="section-note">Let us know if you'll join us under the string lights.</p>
+      <form id="rsvp-form" class="rsvp-form" novalidate>
+        <div class="form-field">
+          <label for="guest-name">Your name</label>
+          <input
+            type="text"
+            id="guest-name"
+            name="name"
+            required
+            autocomplete="name"
+            placeholder="Elena Vasquez"
+          />
+        </div>
+
+        <fieldset class="form-field">
+          <legend>Will you attend?</legend>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="rsvp" value="yes" checked required />
+              Attending
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="rsvp" value="no" />
+              Regrets
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="form-field" id="plus-one-field">
+          <label for="plus-one">Plus-one name <span class="optional">(optional)</span></label>
+          <input
+            type="text"
+            id="plus-one"
+            name="plusOne"
+            autocomplete="name"
+            placeholder="Guest name"
+          />
+        </div>
+
+        <button type="submit" class="submit-btn">Send RSVP</button>
+        <p id="rsvp-feedback" class="rsvp-feedback" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
     <!-- Guest list with RSVP and plus-one details -->
     <section class="card" aria-labelledby="guests-heading">
       <h2 id="guests-heading">Guest List</h2>
