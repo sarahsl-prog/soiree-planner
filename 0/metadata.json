@@ -1,0 +1,63 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "01KXF2KXMX7K8PGQJ9D4P26MHH",
+  "session_id": "16fc5644-de76-4763-baf8-bc36378073ab",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-14T01:07:16.740766945Z",
+  "branch": "cursor/soiree-planner-web-app",
+  "checkpoints_count": 2,
+  "save_step_count": 1,
+  "files_touched": [
+    "app.js",
+    "index.html",
+    "styles.css"
+  ],
+  "agent": "Cursor",
+  "model": "composer-2.5-fast",
+  "turn_id": "f9691651e363",
+  "checkpoint_transcript_start": 15,
+  "transcript_lines_at_start": 15,
+  "compact_transcript_start": 4,
+  "token_usage": {
+    "input_tokens": 11726,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 259892,
+    "output_tokens": 3554,
+    "api_call_count": 1
+  },
+  "session_metrics": {
+    "turn_count": 3
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-07-14T01:07:16.715598233Z",
+    "agent_lines": 218,
+    "agent_removed": 1,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 218,
+    "total_lines_changed": 219,
+    "agent_percentage": 100,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 124,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/settings.json": 84,
+        ".cursor/hooks.json": 40
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 342,
+      "agent_lines_removed": 1
+    }
+  ]
+}
