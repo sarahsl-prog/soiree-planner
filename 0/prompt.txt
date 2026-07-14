@@ -1,0 +1,19 @@
+Stage the changes you worked on, commit, and push for this branch.
+- Current branch: cursor/soiree-planner-web-app.
+- Base branch: main.
+- Stage the changes you worked on.
+- If there are unrelated files or changes, exclude them.
+- Write a concise commit message.
+- Push after creating the commit.
+- Do not include unrelated files in the commit.
+<timestamp>Monday, Jul 13, 2026, 9:07 PM (UTC-4)</timestamp>
+
+Execute the selected diff-tab commit-and-push action.
+
+---
+
+can you add some images to the planner?
+
+---
+
+remove the string light from the very top of the page above the image
