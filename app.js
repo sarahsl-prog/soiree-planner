@@ -25,6 +25,8 @@ const DRINK_MENU = [
   {
     night: "Night One",
     date: "Friday, July 18",
+    image: "images/drink-night-one.jpg",
+    imageAlt: "Golden Hour Spritz cocktail with rosemary and grapefruit",
     cocktail: {
       name: "Golden Hour Spritz",
       description: "Aperol, prosecco, rosemary syrup, and a splash of grapefruit.",
@@ -37,6 +39,8 @@ const DRINK_MENU = [
   {
     night: "Night Two",
     date: "Saturday, July 19",
+    image: "images/drink-night-two.jpg",
+    imageAlt: "Terrace Negroni with orange peel garnish",
     cocktail: {
       name: "Terrace Negroni",
       description: "Gin, Campari, sweet vermouth, orange peel.",
@@ -49,6 +53,8 @@ const DRINK_MENU = [
   {
     night: "Night Three",
     date: "Sunday, July 20",
+    image: "images/drink-night-three.jpg",
+    imageAlt: "Starlight Old Fashioned with smoked orange peel",
     cocktail: {
       name: "Starlight Old Fashioned",
       description: "Bourbon, demerara, angostura, smoked orange.",
@@ -192,6 +198,14 @@ function createDrinkItem(type, drink) {
 function createNightCard(night) {
   const card = document.createElement("article");
   card.className = "drink-night";
+
+  // Photo of the night's signature cocktail
+  const photo = document.createElement("img");
+  photo.className = "drink-photo";
+  photo.src = night.image;
+  photo.alt = night.imageAlt;
+  photo.loading = "lazy";
+  card.appendChild(photo);
 
   const heading = document.createElement("h3");
   heading.textContent = night.night;
